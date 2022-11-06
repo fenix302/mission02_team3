@@ -24,10 +24,11 @@
         height: 20px;
     }
     label{font-weight: bold;}
-    div#wrap{display: inline-block;}
     div#wrap2 fieldset{display: inline-block;}
     div#wrap2 fieldset input{width: 100px;}
     div#wrap2 fieldset select{width: 100px; height: 27px;}
+    div#wrap3 fieldset{display: block;}
+    div#wrap3 fieldset select{width: 328px; height: 27px;}
 </style>
 <body>
     <img src="../" alt="">
@@ -49,29 +50,45 @@
                 <legend><label for="name">이름</label></legend>
                 <input type="text" id="name" maxlength="20">
             </fieldset>
-            <div id="wrap2">
-                <fieldset>
-                    <legend><label for="birth">생년월일</label></legend>
-                    <input type="text" id="birth" maxlength="4" placeholder="년(4자)">
-                        <select name="month" aria-label="월">
-                            <option value="">월</option>
-                            <option value="1">1</option>
-                            <option value="2">2</option>
-                            <option value="3">3</option>
-                            <option value="4">4</option>
-                            <option value="5">5</option>
-                            <option value="6">6</option>
-                            <option value="7">7</option>
-                            <option value="8">8</option>
-                            <option value="9">9</option>
-                            <option value="10">10</option>
-                            <option value="11">11</option>
-                            <option value="12">12</option>
-                        </select>
-                    <input type="text" id="birth" maxlength="2" placeholder="일">
-                </fieldset>
-            </div>
         <div>
+        <div id="wrap2">
+            <fieldset>
+                <legend><label for="birth">생년월일</label></legend>
+                <input type="text" id="birth" maxlength="4" placeholder="년(4자)">
+                    <select name="month" aria-label="월">
+                        <option value="">월</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                <input type="text" id="birth" maxlength="2" placeholder="일">
+            </fieldset>
+        </div>    
+        <div id="wrap3">
+            <fieldset>
+                <legend><label for="gender">성별</label></legend>
+                <select name="gender" aria-label="성별">
+                    <option value="">성별</option>
+                    <option value="male">남자</option>
+                    <option value="female">여자</option>
+                    <option value="nochoice">선택안함</option>
+                </select>
+            </fieldset>
+            <fieldset>
+                <legend><label for="email">이메일</label></legend>
+                <input type="email" id="email">
+            </fieldset>
+        </div>
+        
     </form>
 </body>
 </html>

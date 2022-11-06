@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    body{
+        margin: 0;
+        padding: 0;
+    }
+    form{
+        justify-content: center;
+        display: flex;
+    }
+    fieldset{
+        border: 1px solid white;
+        width: 400px;
+    }
+    input{
+        width: 318px;
+        height: 20px;
+    }
+    label{font-weight: bold;}
+    div#wrap{display: inline-block;}
+    div#wrap2 fieldset{display: inline-block;}
+    div#wrap2 fieldset input{width: 100px;}
+    div#wrap2 fieldset select{width: 100px; height: 27px;}
+</style>
+<body>
+    <img src="../" alt="">
+    <form action="#" method="post">
+        <div id="wrap">
+            <fieldset>
+                <legend><label for="id">아이디</label></legend>
+                <input type="text" id="id" maxlength="15" placeholder="">
+            </fieldset>
+            <fieldset>
+                <legend><label for="pw">비밀번호</label></legend>
+                <input type="password" id="pw" maxlength="20">
+            </fieldset>
+            <fieldset>
+                <legend><label for="repw">비밀번호 재입력</label></legend>
+                <input type="password" id="repw" maxlength="20">
+            </fieldset>
+            <fieldset>
+                <legend><label for="name">이름</label></legend>
+                <input type="text" id="name" maxlength="20">
+            </fieldset>
+            <div id="wrap2">
+                <fieldset>
+                    <legend><label for="birth">생년월일</label></legend>
+                    <input type="text" id="birth" maxlength="4" placeholder="년(4자)">
+                        <select name="month" aria-label="월">
+                            <option value="">월</option>
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                            <option value="6">6</option>
+                            <option value="7">7</option>
+                            <option value="8">8</option>
+                            <option value="9">9</option>
+                            <option value="10">10</option>
+                            <option value="11">11</option>
+                            <option value="12">12</option>
+                        </select>
+                    <input type="text" id="birth" maxlength="2" placeholder="일">
+                </fieldset>
+            </div>
+        <div>
+    </form>
+</body>
+</html>

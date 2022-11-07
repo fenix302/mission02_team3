@@ -5,19 +5,86 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
+    <script>
+        window.onload = function(){
+            var idCheck = document.getElementById('idCheck');
+            idCheck.onclick = function(){
+                alert('사용 가능합니다.');
+            };
+        };
+    </script>
     <style type="text/css">
-
+        *{
+            margin: 0 auto;
+            background: #ffffff;
+        }
+        .logo{
+            margin: 10px 0 50px 105px;
+        }
+        .main_logo{
+            width: 300px;
+        }
+        #join {
+            width: 500px;
+            padding: 30px 30px 30px 30px;
+            margin: 0 auto;
+            border: 1px solid black
+        }
+        h3{
+            margin: 20px 0 10px 0;
+            font-size: 22px;
+        }
+        .input{
+            width: 300px;
+            height: 30px;
+            border: 1px solid #dadada;
+            background: white;
+        }
+            /* 달력 아이콘 바꾸기 */
+        #birth, #idCheck, #tel1{
+            height: 29px;
+            border: 1px solid #bebbbb;
+            cursor: pointer;
+        }                
+        #tel{
+            height: 29px;
+            border: 1px solid #bebbbb;
+        }
+        #postfind{
+            height: 29px;
+            border: 1px solid #bebbbb;
+            background: rgb(228, 222, 222);
+            cursor: pointer;
+        }
+        .address input{
+            margin-bottom: 5px;
+        }
+        .button_box{
+            margin: 50px 40px 0 0;
+            text-align: right;
+        }
+        .button{
+            width: 80px;
+            height: 35px;
+            background: rgba(128, 128, 128, 0.534);
+            border: 1px solid #757575;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <div id="container">
         <div id="join">
+            <div class="logo">
+                <img src="../resources/Jinho/images/signup_jinho.jpg" alt="메인로고" class="main_logo">
+            </div>
             <div class="box1">
                 <div class="join">
                     <h3><label for="id">아이디</label></h3>
                     <span>
                         <input type="text" name="id" id="id" class="input" title="아이디" placeholder="아이디">
                     </span>
+                    <button id="idCheck">중복확인</button>
                 </div>
             </div>
             <div class="box1">
@@ -39,16 +106,15 @@
                         <input type="text" name="name" id="name" title="이름" class="input" placeholder="성함을 입력해주세요.">
                     </span>
                 </div>
-                <!-- 생일 달력 구현해야함 -->
                 <div class="join birthday">
                     <h3><label for="year">생년월일</label></h3>
-                    <input type="date" name="birth" value="1990-01-01" min="1950-01-01" max="2022-12-31">
+                    <input type="date" id="birth" name="birth" value="1990-01-01" min="1950-01-01" max="2022-12-31">
                 </div>
                 <div class="join gender">
                     <h3><label for="gender">성별</label></h3>
                     <p>
-                        남성<input type="radio" name="gender">
-                        여성<input type="radio" name="gender">
+                        남성 <input type="radio" name="gender">
+                        여성 <input type="radio" name="gender">
                     </p>
                 </div>
                 <div class="join email">
@@ -57,11 +123,11 @@
                 </div>
                 <div class="join address">
                     <h3>주소 입력</h3>
-                    <input type="text" id="sample6_postcode" placeholder="우편번호">
-                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
-                    <input type="text" id="sample6_address" placeholder="주소"><br>
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소">
-                    <input type="text" id="sample6_extraAddress" placeholder="참고항목">
+                    <input type="text" id="sample6_postcode" placeholder="우편번호" class="input" title="우편번호">
+                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="postfind" title="우편번호 찾기"><br>
+                    <input type="text" id="sample6_address" placeholder="주소" class="input" title="주소"><br>
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" class="input" title="상세주소">
+                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" class="input" title="참고항목">
                     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
                     <script>
                         function sample6_execDaumPostcode() {
@@ -98,14 +164,14 @@
                 </div>
                 <div class="join moblie">
                     <h3><label for="tel">전화번호</label></h3>
-                    <select name="tel" id="tel">
+                    <select name="tel" id="tel1">
                         <option value="010" selected>010</option>
                     </select>
-                    <input type="tel" id="tel" name="tel" pattern="\d{4}-\d{4}" class="input" title="전화번호" placeholder="-는 빼고 입력해 주세요." required>
+                    <input type="tel" id="tel" name="tel" pattern="\d{4}-\d{4}" class="input" title="전화번호" placeholder="전화번호" required>
                 </div>
             </div>
             <div class="button_box">
-                <button type="button" id="button" class="button">가입하기</button>
+                <button type="button" id="button" class="button" title="가입하기">가입하기</button>
             </div>
         </div>
     </div>

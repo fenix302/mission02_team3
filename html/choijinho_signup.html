@@ -19,13 +19,11 @@
             background: #ffffff;
         }
         .logo{
-            margin: 0 0 50px 105px;
+            margin: 10px 0 50px 105px;
         }
         .main_logo{
             width: 300px;
         }
-        /* #container{
-        } */
         #join {
             width: 500px;
             padding: 30px 30px 30px 30px;
@@ -34,6 +32,7 @@
         }
         h3{
             margin: 20px 0 10px 0;
+            font-size: 22px;
         }
         .input{
             width: 300px;
@@ -124,11 +123,11 @@
                 </div>
                 <div class="join address">
                     <h3>주소 입력</h3>
-                    <input type="text" id="sample6_postcode" placeholder="우편번호" class="input">
-                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="postfind"><br>
-                    <input type="text" id="sample6_address" placeholder="주소" class="input"><br>
-                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" class="input">
-                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" class="input">
+                    <input type="text" id="sample6_postcode" placeholder="우편번호" class="input" title="우편번호">
+                    <input type="button" onclick="sample6_execDaumPostcode()" value="우편번호 찾기" id="postfind" title="우편번호 찾기"><br>
+                    <input type="text" id="sample6_address" placeholder="주소" class="input" title="주소"><br>
+                    <input type="text" id="sample6_detailAddress" placeholder="상세주소" class="input" title="상세주소">
+                    <input type="text" id="sample6_extraAddress" placeholder="참고항목" class="input" title="참고항목">
                     <script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
                     <script>
                         function sample6_execDaumPostcode() {
@@ -168,11 +167,11 @@
                     <select name="tel" id="tel1">
                         <option value="010" selected>010</option>
                     </select>
-                    <input type="tel" id="tel" name="tel" pattern="\d{4}-\d{4}" class="input" title="전화번호" placeholder="-는 빼고 입력해 주세요." required>
+                    <input type="tel" id="tel" name="tel" pattern="\d{4}-\d{4}" class="input" title="전화번호" placeholder="전화번호" required>
                 </div>
             </div>
             <div class="button_box">
-                <button type="button" id="button" class="button">가입하기</button>
+                <button type="button" id="button" class="button" title="가입하기">가입하기</button>
             </div>
         </div>
     </div>

@@ -12,26 +12,26 @@
         padding: 0;
         display: flex;
         justify-content: center;
-        
     }
     form{
-        width: 900px;
-        height: auto;
-        border: 1px solid black;
-        
+        width: 1300px;
+        height: 1080px;
+        background-color: #daecc7;
     }
-    form h1{text-align: left; padding-left: 155px;}
+    form h1{text-align: left; padding-left: 155px; margin-bottom: 60px; font-size: 60px;}
     fieldset{
         padding-left: 150px;
-        border: 1px solid white;
+        border: 1px solid #daecc7;
         width: 400px;
     }
     input{
         width: 318px;
         height: 20px;
     }
+    input.checkbox{width: 20px; margin-left: 150px; margin-top: 10px;}
     label{font-weight: bold;}
-    div#wrap2 fieldset{display: inline-block;}
+    #sideimage{margin-left: 150px; width: 1000px; height: 120px; border: 1px solid red; overflow: auto;}
+    div#wrap2 fieldset{display: block;}
     div#wrap2 fieldset input{width: 100px;}
     div#wrap2 fieldset select{width: 100px; height: 27px;}
     div#wrap3 fieldset{display: block;}
@@ -58,6 +58,7 @@
                 <input type="text" id="name" maxlength="20" title="이름을 입력 해주세요!">
             </fieldset>
         <div>
+        
         <div id="wrap2">
             <fieldset>
                 <legend><label for="birth">생년월일</label></legend>
@@ -78,6 +79,16 @@
                         <option value="12">12</option>
                     </select>
                 <input type="text" id="birth" maxlength="2" placeholder="일">
+            </fieldset>
+            <fieldset>
+                <legend><label for="tel">휴대폰번호</label></legend>
+                <select name="tel" aria-label="선택">
+                    <option>선택</option>
+                    <option selected>010</option>
+                    <option>011</option>
+                </select>
+                <input type="tel" id="tel" maxlength="4">
+                <input type="tel" id="tel" maxlength="4">
             </fieldset>
         </div>    
         <div id="wrap3">
@@ -164,7 +175,16 @@
                     }
                 </script>
             </fieldset>
-        </div>        
+        </div> 
+        <div id="sideimage">
+            <p>
+                Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.Lorem ipsum, dolor sit amet consectetur adipisicing elit. Commodi dignissimos veritatis eligendi explicabo excepturi hic dolor aliquam provident, similique vero suscipit quae iste et quo animi earum quia quasi quas.
+            </p>
+        </div>
+        <div>
+            <input class="checkbox" type="checkbox">
+            <label for="checkbox">개인정보처리방침</label>
+        </div>       
     </form>
 </body>
 </html>

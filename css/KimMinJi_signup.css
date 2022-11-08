@@ -5,7 +5,6 @@
    margin: 0;
    padding: 0;
    font-family: 'Noto Sans KR', sans-serif;
-    font-family: 'Noto Serif KR', serif;
 }
 
 
@@ -51,4 +50,16 @@ h1 img{
     height: 1670px;
     background-color: burlywood;
     margin: 0 auto;
+}
+
+.box{
+    max-width: 460px;
+    margin-bottom: 40px;
+    background-color: aqua;
+}
+
+textarea{
+    width: 420px;
+    height: 50px;
+    resize: none;
 }

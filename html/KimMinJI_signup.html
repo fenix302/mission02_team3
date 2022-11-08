@@ -19,7 +19,89 @@
 
             <!-- 메인 -->
             <div id="main">
-                <div class="qbox"></div>
+                <div class="q1">
+                    <h3>아이디</h3>
+                    <div class="box">
+                        <input required type="text" name="id" id="qbox" autocomplete="off">
+                    </div>
+
+                    <h3>비밀번호</h3>
+                    <div class="box">
+                        <input required type="password" name="pw" id="qbox">
+                    </div>
+
+                    <h3>비밀번호 재확인</h3>
+                    <div class="box">
+                        <input required type="password" name="pw_check" id="qbox">
+                    </div>
+                </div>
+
+                <div class="q2">    
+                    <h3>이름</h3>
+                    <div class="box">
+                        <input required type="text" name="name" id="qbox" autocomplete="off">
+                    </div>
+
+                    <h3>생년월일</h3>
+                    <div class="box">
+                        <input type="date" name="calendar" id="Calendar">
+                    </div>
+
+                    <h3>성별</h3>
+                    <div class="box">
+                        <p>
+                        <input type="radio" name="female" id="sex"> 여성
+                        <input type="radio" name="male" id="sex"> 남성
+                        <input type="radio" name="non" id="sex"> 관련없음
+                        </p>
+                        <!-- 선택여러개됨 수정해야함 -->
+                    </div>
+
+                    <h3>본인 확인 이메일</h3>
+                    <div class="box">
+                        <input type="text" name="name" id="qbox" autocomplete="on">
+                    </div>
+                    <!-- (@형식 적용해야함 -->
+
+                    <h3>전화번호</h3>
+                    <div class="box">
+                        <input type="text" name="name" id="qbox" autocomplete="on">
+                    </div>
+                    <!-- 전화번호(010-000-0000형식 적용, selcet,option.seclet 010적용 그 뒤에는 패턴 속성 적용) -->
+
+                    <h3>주소</h3>
+                    <div class="box">
+                        <input type="text" name="name" id="qbox" autocomplete="on">
+                    </div>
+                    <!-- (api활용) -->
+                </div>
+
+                <div class="q3">
+                    <h3>가입목적</h3>
+                    <div class="box">
+                        <textarea name="" id=""></textarea>
+                    </div>
+
+                    <h3>좋아하는 색상</h3>
+                    <div class="box">
+                        <input class="write" type="color" /></p>
+                    </div>
+
+                    <h3>관심분야</h3>
+                    <div class="box">
+                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
+                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
+                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
+                    </div>
+
+                    <h3>홈페이지</h3>
+                    <div class="box">
+                        <input type="url" name="name" id="qbox" autocomplete="off">
+                        <button class="bt1">제출하기</button>
+                    </div>
+                </div>
+
+                <button class="bt2"> 가입하기 </button>
             </div>
         </div>
     </div>

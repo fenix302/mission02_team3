@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <br>
+
+    <hr>
+    <title>회원가입 페이지</title>
+    <style type="text/css">
+        legend {
+            margin-top: 100px;
+            font-weight: bold;
+            font-size: 25px;
+            color: darkblue;
+           text-align: center;}
+
+        .container{
+            width: 600px;
+            margin: 0 auto;
+
+                }
+        ul{
+            list-style-type: none;
+        }
+        fieldset{
+            margin: 300px 550px;
+            margin-top: 100px;
+            font-size: 18px;
+        }
+        
+        ul li{
+            margin-bottom: 100px;
+        }
+
+        footer { 
+        display: block;
+        margin-bottom: 10px;
+        margin-inline: 10px;
+        text-align: center;
+        }
+    </style>
+
+    <script>
+
+        // 전화번호 공식
+        function phoneFomatter(num,type){
+    
+    var formatNum = '';
+    
+    if(num.length==11){
+        if(type==0){
+            formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-****-$3');
+        }else{
+            formatNum = num.replace(/(\d{3})(\d{4})(\d{4})/, '$1-$2-$3');
+        }
+    }else if(num.length==8){
+        formatNum = num.replace(/(\d{4})(\d{4})/, '$1-$2');
+    }else{
+        if(num.indexOf('02')==0){
+            if(type==0){
+                formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-****-$3');
+            }else{
+                formatNum = num.replace(/(\d{2})(\d{4})(\d{4})/, '$1-$2-$3');
+            }
+        }else{
+            if(type==0){
+                formatNum = num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-***-$3');
+            }else{
+                formatNum = num.replace(/(\d{3})(\d{3})(\d{4})/, '$1-$2-$3');
+            }
+        }
+    }
+    return formatNum;
+    
+}
+// 전화번호 공식 끝
+
+
+    </script>
+   
+</head>
+<body>
+    <div><legend align="center">회원가입 페이지</legend></div>
+
+
+<fieldset style="width: 1000px; background:aliceblue;">
+   <ul> <li><p>아이디 : <input type="text"></p></li>
+        <li><form name="join">
+        비밀번호 : <input type="password" id="password1">
+        <br>
+        비밀번호확인 : <input type="password" id="password2">
+        <input type="button" onclick="test()" value="확인">
+      </form></li>
+    <!-- 비밀번호 -->
+      <script type="text/javascript">
+        function test() {
+          var p1 = document.getElementById('password1').value;
+          var p2 = document.getElementById('password2').value;
+          
+          if(p1.length < 6) {
+                  alert('입력한 글자가 6글자 이상이어야 합니다.');
+                  return false;
+              }
+
+              
+              if( p1 != p2 ) {
+                alert("비밀번호불일치");
+                return false;
+              } else{
+                alert("비밀번호가 일치합니다");
+                return true;
+              }
+        }
+      </script>
+    <li><p>이메일 : <input type="email"></p></li>
+
+<!-- 전화번호  -->
+
+
+    <li><p>전화번호 : <input type="tel"></p></li>
+    
+<!-- 생일찾기 -->
+    <li><form action="/action_page.php">
+        <label for="birthday">Birthday:</label>
+        <input type="date" id="birthday" name="birthday">
+        <input type="submit" value="Submit">
+      </form>
+  <br></li>
+  <!-- 주소찾기 -->
+<li><p>주소찾기</p>
+</form>
+<input type="text" id="sample4_postcode" placeholder="우편번호">
+<input type="button" onclick="sample4_execDaumPostcode()" value="우편번호 찾기"><br>
+<input type="text" id="sample4_roadAddress" placeholder="도로명주소">
+<input type="text" id="sample4_jibunAddress" placeholder="지번주소">
+<span id="guide" style="color:#999;display:none"></span>
+<input type="text" id="sample4_detailAddress" placeholder="상세주소">
+<input type="text" id="sample4_extraAddress" placeholder="참고항목">
+
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample4_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+               
+                var roadAddr = data.roadAddress; 
+                var extraRoadAddr = ''; 
+
+                if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                    extraRoadAddr += data.bname;
+                }
+               
+                if(data.buildingName !== '' && data.apartment === 'Y'){
+                   extraRoadAddr += (extraRoadAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                }
+               
+                if(extraRoadAddr !== ''){
+                    extraRoadAddr = ' (' + extraRoadAddr + ')';
+                }
+
+                document.getElementById('sample4_postcode').value = data.zonecode;
+                document.getElementById("sample4_roadAddress").value = roadAddr;
+                document.getElementById("sample4_jibunAddress").value = data.jibunAddress;
+                
+              
+                if(roadAddr !== ''){
+                    document.getElementById("sample4_extraAddress").value = extraRoadAddr;
+                } else {
+                    document.getElementById("sample4_extraAddress").value = '';
+                }
+
+                var guideTextBox = document.getElementById("guide");
+              
+                if(data.autoRoadAddress) {
+                    var expRoadAddr = data.autoRoadAddress + extraRoadAddr;
+                    guideTextBox.innerHTML = '(예상 도로명 주소 : ' + expRoadAddr + ')';
+                    guideTextBox.style.display = 'block';
+
+                } else if(data.autoJibunAddress) {
+                    var expJibunAddr = data.autoJibunAddress;
+                    guideTextBox.innerHTML = '(예상 지번 주소 : ' + expJibunAddr + ')';
+                    guideTextBox.style.display = 'block';
+                } else {
+                    guideTextBox.innerHTML = '';
+                    guideTextBox.style.display = 'none';
+                }
+            }
+        }).open();    
+   
+    }
+
+</script></li>
+<!-- 우편주소 끝 -->
+<br><br>
+     <strong><input type="checkbox" name="모두 확인"  />(필수) 본인은 만 14세 미만이 아닙니다.</strong>
+     <br>
+    <input type="checkbox" name="season"  />(선택) ㅇㅇㅇ에서 제공하는 소식을 SMS, 이메일로 받겠습니다.
+    <br>
+
+</fieldset></ul>
+
+<hr>
+<footer>
+    <p>Copyright © 2018 tcpschool.co.,Ltd. All rights reserved.</p>
+    <address>Contact webmaster for more information. 070-1234-5678</address>
+</footer>
+</body>
+</html>

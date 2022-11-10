@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>회원가입</title>
     <script>
-        // 포커스 시켜주는거 적용시켜보기
         window.onload = function(){
             var idCheck = document.getElementById('idCheck');
             idCheck.onclick = function(){
@@ -41,7 +40,6 @@
             border: 1px solid #dadada;
             background: white;
         }
-            /* 달력 아이콘 바꾸기 */
         #birth, #idCheck, #tel1{
             height: 29px;
             border: 1px solid #bebbbb;
@@ -75,7 +73,7 @@
 </head>
 <body>
     <div id="container">
-        <form id="join">
+        <div id="join">
             <div class="logo">
                 <img src="../resources/Jinho/images/signup_jinho.jpg" alt="메인로고" class="main_logo">
             </div>
@@ -92,22 +90,12 @@
                 <div class="join">
                     <h3><label for="pswd1">비밀번호</label></h3>
                     <span>
-                        <input type="password" name="pswd1" id="pswd1" class="input" title="비밀번호" minlength="12" placeholder="비밀번호" required>
+                        <input type="password" name="pswd1" id="pswd1" class="input" title="비밀번호"  minlength="8" placeholder="비밀번호" required>
                     </span>
                     <h3><label for="pswd2">비밀번호 재확인</label></h3>
                     <span>
                         <input type="password" name="psed2" id="pswd2" class="input" title="비밀번호 재확인" placeholder="비밀번호 다시 입력" required>
                     </span>
-                    <!-- 비밀번호 재확인 비번 같게하는 기능 -->
-                    <!-- <script>
-                        function(){
-                            var pw = getElementById(pswd1);
-                            var pw2 = getElementById(pswd2);
-                            if(pw.value === pw2.value){
-                                alert('ddd')
-                            }
-                        } -->
-                    </script>
                 </div>
             </div>
             <div class="box1">
@@ -184,7 +172,7 @@
             <div class="button_box">
                 <input type="submit" id="button" class="button" value="가입하기" title="가입하기">
             </div>
-        </form>
+        </div>
     </div>
 
 

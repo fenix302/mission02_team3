@@ -12,11 +12,13 @@
 </head>
 <body>
     <div class="wrap">
-        <div id="container">
-            <header>
+        <header>
+            <div class="bg">
                 <h1><img src="../resources/Minji/images/KMJ_logo.png" alt="DIDIT로고"></h1>
-            </header>
-
+            </div>
+        </header>
+        
+        <div id="container">
             <!-- 메인 -->
             <div id="main">
                 <div class="q1">
@@ -27,7 +29,7 @@
 
                     <h3>비밀번호</h3>
                     <div class="box">
-                        <input required type="password" name="pw" id="qbox">
+                        <input required type="password" name="pw" id="qbox" placeholder="8자리 이상 입력해주세요.">
                     </div>
 
                     <h3>비밀번호 재확인</h3>
@@ -72,9 +74,12 @@
 
                     <h3>주소</h3>
                     <div class="box">
-                        <input type="text" name="name" id="qbox" autocomplete="on">
+                        <input type="text" id="sample6_postcode" placeholder="우편번호">
+                        <input type="button" id="found" onclick="sample6_execDaumPostcode()" value="우편번호 찾기"><br>
+                        <input type="text" id="sample6_address" placeholder="주소"><br>
+                        <input type="text" id="sample6_detailAddress" placeholder="상세주소">
+                        <input type="text" id="sample6_extraAddress" placeholder="참고항목">                        
                     </div>
-                    <!-- (api활용) -->
                 </div>
 
                 <div class="q3">
@@ -90,23 +95,72 @@
 
                     <h3>관심분야</h3>
                     <div class="box">
-                        <span><input type="checkbox" name="fv" id="checkbox">dnasba</span>
-                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
-                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
-                        <p><input type="checkbox" name="name" id="checkbox">왕냥</p>
+                        <label for="fv">
+                            <p><input type="checkbox" name="fv" id="checkbox">풍경</p>
+                        </label>
+
+                            <p><input type="checkbox" name="fv" id="checkbox">컨셉츄얼</p>
+                         
+                            <p><input type="checkbox" name="fv" id="checkbox">인물</p>
                     </div>
 
                     <h3>홈페이지</h3>
                     <div class="box">
-                        <input type="url" name="name" id="qbox" autocomplete="off">
+                        <input type="url" name="homepage" id="qbox" autocomplete="off">
                         <button class="bt1">제출하기</button>
                     </div>
                 </div>
 
                 <button class="bt2"> 가입하기 </button>
+        
             </div>
         </div>
+        <footer>
+            <div class="inner">
+                <div class="copyringt">                    
+                </div>
+            </div>
+        </footer>
     </div>
-    
+<script src="//t1.daumcdn.net/mapjsapi/bundle/postcode/prod/postcode.v2.js"></script>
+<script>
+    function sample6_execDaumPostcode() {
+        new daum.Postcode({
+            oncomplete: function(data) {
+                var addr = ''; 
+                var extraAddr = ''; 
+
+                if (data.userSelectedType === 'R') { 
+                    addr = data.roadAddress;
+                } else { 
+                    addr = data.jibunAddress;
+                }
+
+                if(data.userSelectedType === 'R'){
+                
+                    if(data.bname !== '' && /[동|로|가]$/g.test(data.bname)){
+                        extraAddr += data.bname;
+                    }
+                    
+                    if(data.buildingName !== '' && data.apartment === 'Y'){
+                        extraAddr += (extraAddr !== '' ? ', ' + data.buildingName : data.buildingName);
+                    }
+                   
+                    if(extraAddr !== ''){
+                        extraAddr = ' (' + extraAddr + ')';
+                    }
+                  
+                    document.getElementById("sample6_extraAddress").value = extraAddr;
+                
+                } else {
+                    document.getElementById("sample6_extraAddress").value = '';
+                }
+                document.getElementById('sample6_postcode').value = data.zonecode;
+                document.getElementById("sample6_address").value = addr;
+                document.getElementById("sample6_detailAddress").focus();
+            }
+        }).open();
+    }
+</script>    
 </body>
 </html>

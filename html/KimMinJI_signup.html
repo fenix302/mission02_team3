@@ -13,18 +13,17 @@
 <body>
     <div class="wrap">
         <header>
-            <div class="bg">
-                <h1><img src="../resources/Minji/images/KMJ_logo.png" alt="DIDIT로고"></h1>
-            </div>
+            <p class="first"> 회원가입</p>
+            <div class="bg"></div>
+            <h1><img src="../resources/Minji/images/KMJ_logo.png" alt="DIDIT로고"></h1>
         </header>
-        
         <div id="container">
             <!-- 메인 -->
             <div id="main">
                 <div class="q1">
                     <h3>아이디</h3>
                     <div class="box">
-                        <input required type="text" name="id" id="qbox" autocomplete="off">
+                        <input required type="text" name="id" id="qbox" autocomplete="off" placeholder="8~16자리로 입력하세요.">
                     </div>
 
                     <h3>비밀번호</h3>
@@ -34,7 +33,7 @@
 
                     <h3>비밀번호 재확인</h3>
                     <div class="box">
-                        <input required type="password" name="pw_check" id="qbox">
+                        <input required type="password" name="pw_check" id="qbox" placeholder="동일한 비밀번호를 입력하세요.">
                     </div>
                 </div>
 
@@ -62,13 +61,33 @@
 
                     <h3>본인 확인 이메일</h3>
                     <div class="box">
-                        <input type="text" name="name" id="email" autocomplete="on">
+                        <input type="text" name="mail" id="email1" autocomplete="on" placeholder="아이디를 입력해주세요.">
+                            @    
+                        <select name="mail" id="email2">
+                            <option selected>선택</option>
+                            <option>naver.com</option>
+                            <option>daum.com</option>
+                            <option>google.com</option>
+                            <option>직접입력</option>
+
+                          </select>
+                        </select>
                     </div>
                     <!-- (@형식 적용해야함 -->
 
                     <h3>전화번호</h3>
                     <div class="box">
-                        <input type="text" name="name" id="tel" autocomplete="on">
+                        <select name="score" id="tel">
+                            <option>선택</option>
+                            <option selected>010</option>
+                            <option>011</option>
+                            <option>016</option>
+                          </select>
+                        </select>
+                        -
+                        <input type="tel" id="tel1" class="tel" minlength="3" maxlength="4" placeholder="3-4자리">
+                        -
+                        <input type="tel" id="tel2" maxlength="4" placeholder="4자리">
                     </div>
                     <!-- 전화번호(010-000-0000형식 적용, selcet,option.seclet 010적용 그 뒤에는 패턴 속성 적용) -->
 
@@ -106,7 +125,7 @@
 
                     <h3>홈페이지</h3>
                     <div class="box">
-                        <input type="url" name="homepage" id="qbox" autocomplete="off">
+                        <input type="url" name="homepage" id="home" autocomplete="off" placeholder="링크를 넣어주세요.">
                         <button class="bt1">제출하기</button>
                     </div>
                 </div>
@@ -116,8 +135,13 @@
             </div>
         </div>
         <footer>
-            <div class="inner">
-                <div class="copyringt">                    
+            <div class="q3">
+                <div class="inner">
+                    <div id="copy">
+                        <p>주소 : 경기도 용인시 수지구 정평로 123</p>
+                        <p>email : photo@korea.com</p>
+                        <p>COPYRIGHT ⓒ 2021 The 스튜디오. ALL RIGHTS RESERVED</p>
+                     </div>   
                 </div>
             </div>
         </footer>

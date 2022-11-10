@@ -16,6 +16,7 @@ h3{
    width: 100%;
    height: 100%;
    background-color: #f7f7f7;
+   position: relative;
 }
 
 #container {
@@ -30,17 +31,20 @@ h3{
    margin-left: 20px;
 }
 
+.q1{
+   margin-top: 60px;
+}
+
 
 /* 헤더 */
+
+
 header {
    width: 100%;
    height: 140px;
    position: relative;
-   background-color: rgba(0, 0, 0, 40%);
-
+   /* background: linear-gradient( to bottom, #000000, #f7f7f7 65%); */
 }
-
-
 
 /* 인풋 */
 input[type=radio] {
@@ -115,11 +119,66 @@ h1 img {
    right: 0;
 }
 
+.first{
+   max-width: 100%;
+   padding-top: 120px;
+   text-align: center;
+   font-weight: 700;
+   color: #bdbdbd;
+   font-weight: 700;
+   filter: brightness(none);
+}
+
 #main {
    max-width: 460px;
    min-width: 250px;
    margin: 0 auto;
    margin-top: 20px;
+}
+
+/* 이메일 */
+
+#email1{
+   width: 200px;
+   margin-left: 5px;
+}
+#email2{
+   margin-right: 5px;
+   width: 170px; 
+   height: 50px;
+   padding-left: 10px;
+   font-family: inherit;  
+   border-radius: 0px; 
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none;
+   margin-right: 5px;
+}
+
+/* 전화번호 */
+#tel{
+   margin-right: 5px;
+   width: 110px; 
+   height: 50px;
+   padding-left: 10px;
+   font-family: inherit;  
+   border-radius: 0px; 
+   -webkit-appearance: none; 
+   -moz-appearance: none;
+   appearance: none;
+   margin-top: 10px;
+}
+
+#tel1, #tel2{
+   width: 115px; 
+   height: 50px;
+}
+#tel1{
+   margin: 0px 5px 0px 5px;
+}
+
+#tel2{
+   margin: 0px 0px 0px 5px;
 }
 
 .box {
@@ -135,7 +194,19 @@ textarea {
    margin-top: 10px;
 }
 
+
 /* 하단 버튼 */
+.bt1{
+   width: 100px;
+   height: 50px;
+   margin: 0 auto;
+   border: none;
+   background-color: #A60000;
+   font-size: 14pt;
+   font-weight: 700;
+   color: #fff;
+   margin-top: 10px;
+}
 
 .bt2{
    width: 410px;
@@ -159,5 +230,12 @@ footer{
 
 .inner{
    max-width: 768px;
+   color: darkgray;
+   position: relative;
 }
 
+#copy{
+   margin: 40px;
+   position: absolute;
+   font-size: 10pt;
+}

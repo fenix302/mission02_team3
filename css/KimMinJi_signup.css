@@ -43,10 +43,22 @@ input {
 
 #gender {
    width: 15px;
+   height: 15px;
 }
 
 #checkbox {
    width: 15px;
+   height: 15px;
+   margin-right: 10px;
+}
+
+#Calendar{
+   width: 390px;
+   padding-right: 10px;
+}
+
+#color{
+   padding: 0%;
 }
 
 /* 내용 */
